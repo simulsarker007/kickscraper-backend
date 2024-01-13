@@ -8,6 +8,7 @@ const UserSchema = new mongoose.Schema({
     firstName: String,
     lastName: String,
     email: { type: String, unique: true, required: true },
+    avatar: String,
     emailConfirmedAt: String,
     password: String,
     job_level: { type: String, required: false },

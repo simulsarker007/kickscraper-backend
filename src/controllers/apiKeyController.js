@@ -21,7 +21,7 @@ const createApi = async (req, res) => {
         const { error, value } = schema.validate(req.body);
 
         if (error) {
-            return res.status(400).json({ message: 'Validation Error', error: error.details });
+            return res.status(400).json({ message: `Validation Error : ${error?.details?.[0]?.message}`, error: error.details });
         }
 
 
@@ -59,7 +59,7 @@ const createApi = async (req, res) => {
         res.json({ message: "Api Key Create Successfully", apiKey });
     } catch (error) {
         console.error(error);
-        res.status(401).json({ message: 'Unauthorized', data: false });
+        res.status(500).json({ message: 'Server Side Error', data: false });
     }
 };
 
@@ -87,7 +87,7 @@ const getApiByApp = async (req, res) => {
         res.json({ message: "Success", apiKey });
     } catch (error) {
         console.error(error);
-        res.status(401).json({ message: 'Unauthorized', data: false });
+        res.status(500).json({ message: 'Server Side Error', data: false });
     }
 };
 
@@ -121,7 +121,7 @@ const getApiKey = async (req, res) => {
         res.json({ message: "Application By User ID", apiKey });
     } catch (error) {
         console.error(error);
-        res.status(401).json({ message: 'Unauthorized', data: false });
+        res.status(500).json({ message: 'Server Side Error', data: false });
     }
 };
 
@@ -142,7 +142,7 @@ const updateApiKey = async (req, res) => {
         const { error, value } = schema.validate(req.body);
 
         if (error) {
-            return res.status(400).json({ message: 'Validation Error', error: error.details });
+            return res.status(400).json({ message: `Validation Error : ${error?.details?.[0]?.message}`, error: error.details });
         }
 
 
@@ -183,7 +183,7 @@ const updateApiKey = async (req, res) => {
         res.json({ message: "Api Key Updated Successfully", apiKey });
     } catch (error) {
         console.error(error);
-        res.status(401).json({ message: 'Unauthorized', data: false });
+        res.status(500).json({ message: 'Server Side Error', data: false });
     }
 };
 

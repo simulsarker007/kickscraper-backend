@@ -5,12 +5,14 @@ const cors = require('cors');
 require('dotenv').config();
 
 const apiRoutes = require('./routes/index');
-const { timestampPlugin } = require('./utils/monogoUtils');
 
 const app = express();
 
-app.use(bodyParser.json());
+app.use(bodyParser.json({ limit: '50mb' }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
+
+
 
 
 mongoose.connect(process.env.MONGODB_URI);

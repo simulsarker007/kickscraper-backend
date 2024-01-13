@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const fs = require('fs').promises;
 const path = require('path');
-const nodemailerTransporter = require('../config/nodemailer');
+const nodemailerTransporter = require('../utils/nodemailer');
 
 
 const register = async (req, res) => {
