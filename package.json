@@ -1,7 +1,7 @@
 {
-  "name": "kickscrapper-backend",
+  "name": "kickscraper-backend",
   "version": "1.0.0",
-  "description": "KickScrapper Backend",
+  "description": "Kickscraper Backend",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,17 +10,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shakiltousif/kickscrapper-backend.git"
+    "url": "git+https://github.com/shakiltousif/kickscraper-backend.git"
   },
   "keywords": [
-    "scrapper"
+    "scraper"
   ],
   "author": "Shakil Ahamed",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/shakiltousif/kickscrapper-backend/issues"
+    "url": "https://github.com/shakiltousif/kickscraper-backend/issues"
   },
-  "homepage": "https://github.com/shakiltousif/kickscrapper-backend#readme",
+  "homepage": "https://github.com/shakiltousif/kickscraper-backend#readme",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
