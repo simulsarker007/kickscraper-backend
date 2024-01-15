@@ -2,6 +2,14 @@
 
 This repo is for kickscraper backend stuff. We've different repo for frontend.
 
+## Installation
+
+just type: npm i
+
+and npm run dev.
+
+That's it.
+
 ## Uploaded FILE access method
 
 Uploaded FILE can be accessed by direct url with /uploads
