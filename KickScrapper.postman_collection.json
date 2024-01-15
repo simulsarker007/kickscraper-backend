@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "967da0a3-22b4-4177-904b-54115c5aa7b0",
+		"name": "KickScrapper",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28038222"
+	},
+	"item": [
+		{
+			"name": "Register POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Shakil\",\n    \"lastName\": \"Ahamed\",\n    \"email\": \"shakilahamedctg123@gmail.com\",\n    \"password\": \"fasterboyshakil\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BACKEND_API_URL}}/auth/register",
+					"host": [
+						"{{BACKEND_API_URL}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login POST",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"shakilahamedctg123@gmail.com\",\n    \"password\": \"fasterboyshakil\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BACKEND_API_URL}}/auth/login",
+					"host": [
+						"{{BACKEND_API_URL}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User GET",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoX3V1aWQiOiI0MjNkYTAwYi1mMTQ2LTQxMmQtYWJlOS1iZTk4MWEwMDVkZWEiLCJpYXQiOjE3MDM4ODI3MzN9.Zejp0B75CNt8_qskDEkCZxjeUKnJb3S0YyIuoF6G1gI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BACKEND_API_URL}}/user",
+					"host": [
+						"{{BACKEND_API_URL}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Update",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoX3V1aWQiOiI4YzJiYTI5Ny1mYWQ2LTQzYmEtODQ5Zi1jMjJlM2RjNWU5ZTYiLCJpYXQiOjE3MDUxODIwNzF9.iR-IQEvqTQYW6PC9nsA75k6DjuLe37gm5VTmfircR-o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "avatar",
+							"type": "file",
+							"src": "/Users/shakiltousif/Downloads/shakil_pp.jpeg"
+						},
+						{
+							"key": "firstName",
+							"value": "Shakil",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Ahamed",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "shakilahamedctg123@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BACKEND_API_URL}}/user/update",
+					"host": [
+						"{{BACKEND_API_URL}}"
+					],
+					"path": [
+						"user",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "App Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoX3V1aWQiOiI4YzJiYTI5Ny1mYWQ2LTQzYmEtODQ5Zi1jMjJlM2RjNWU5ZTYiLCJpYXQiOjE3MDUxODIwNzF9.iR-IQEvqTQYW6PC9nsA75k6DjuLe37gm5VTmfircR-o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"New Web\",\n    \"domain\" : \"google.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BACKEND_API_URL}}/user/app/create",
+					"host": [
+						"{{BACKEND_API_URL}}"
+					],
+					"path": [
+						"user",
+						"app",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "App Update",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoX3V1aWQiOiI4YzJiYTI5Ny1mYWQ2LTQzYmEtODQ5Zi1jMjJlM2RjNWU5ZTYiLCJpYXQiOjE3MDUxODIwNzF9.iR-IQEvqTQYW6PC9nsA75k6DjuLe37gm5VTmfircR-o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"New Web 0.1\",\n    \"domain\" : \"facebook.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BACKEND_API_URL}}/user/app/update/65a3067eecd40e8c927b7e2f",
+					"host": [
+						"{{BACKEND_API_URL}}"
+					],
+					"path": [
+						"user",
+						"app",
+						"update",
+						"65a3067eecd40e8c927b7e2f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "App By User",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoX3V1aWQiOiI4YzJiYTI5Ny1mYWQ2LTQzYmEtODQ5Zi1jMjJlM2RjNWU5ZTYiLCJpYXQiOjE3MDUxODIwNzF9.iR-IQEvqTQYW6PC9nsA75k6DjuLe37gm5VTmfircR-o",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BACKEND_API_URL}}/user/app/by_user",
+					"host": [
+						"{{BACKEND_API_URL}}"
+					],
+					"path": [
+						"user",
+						"app",
+						"by_user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "App Single",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoX3V1aWQiOiI4YzJiYTI5Ny1mYWQ2LTQzYmEtODQ5Zi1jMjJlM2RjNWU5ZTYiLCJpYXQiOjE3MDUxODIwNzF9.iR-IQEvqTQYW6PC9nsA75k6DjuLe37gm5VTmfircR-o",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BACKEND_API_URL}}/user/app/single/65a3067eecd40e8c927b7e2f",
+					"host": [
+						"{{BACKEND_API_URL}}"
+					],
+					"path": [
+						"user",
+						"app",
+						"single",
+						"65a3067eecd40e8c927b7e2f"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BACKEND_URL",
+			"value": "http://localhost:3000/",
+			"type": "string"
+		},
+		{
+			"key": "BACKEND_API_URL",
+			"value": "http://localhost:3000/api",
+			"type": "string"
+		}
+	]
+}
