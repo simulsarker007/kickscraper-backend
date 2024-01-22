@@ -5,9 +5,6 @@ const ApiKey = require("../models/api_key");
 
 const createApi = async (req, res) => {
     try {
-
-
-
         // Define a schema for validation
         const schema = Joi.object({
             name: Joi.string().required(),
