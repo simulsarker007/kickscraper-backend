@@ -20,6 +20,6 @@ Like you're getting image avatars/demo_img.jpg from api.kickscrapper.com. Then j
 
 You can see kickscrapper collection json file named: KickScrapper.postman_collection.json.
 
-In production, you need change the localhost url http://localhost:3000/ to desire url (like: https://api.kickscrapper.com/)
+In production, you need change the localhost url http://localhost:3000/ to desire url (like: https://api.kickscraper.com/)
 
 Note: You can just check kickscrapper_postman.png for more.
