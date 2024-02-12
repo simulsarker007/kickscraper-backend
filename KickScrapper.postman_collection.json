@@ -155,7 +155,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\" : \"New Web\",\n    \"domain\" : \"google.com\"\n}",
+					"raw": "{\n    \"name\" : \"New Web\",\n    \"domain\" : \"facebook.com\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -257,6 +257,337 @@
 						"app",
 						"single",
 						"65a3067eecd40e8c927b7e2f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Api Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoX3V1aWQiOiI4YzJiYTI5Ny1mYWQ2LTQzYmEtODQ5Zi1jMjJlM2RjNWU5ZTYiLCJpYXQiOjE3MDUxODIwNzF9.iR-IQEvqTQYW6PC9nsA75k6DjuLe37gm5VTmfircR-o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"API one\",\n\t\"description\": \"api for domain.com\",\n\t\"type\": \"public\",\n\t\"rate_limit\": 1000,\n\t\"is_active\": \"yes\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BACKEND_API_URL}}/user/api/create/65a3067eecd40e8c927b7e2f",
+					"host": [
+						"{{BACKEND_API_URL}}"
+					],
+					"path": [
+						"user",
+						"api",
+						"create",
+						"65a3067eecd40e8c927b7e2f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Api Update",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoX3V1aWQiOiI4YzJiYTI5Ny1mYWQ2LTQzYmEtODQ5Zi1jMjJlM2RjNWU5ZTYiLCJpYXQiOjE3MDUxODIwNzF9.iR-IQEvqTQYW6PC9nsA75k6DjuLe37gm5VTmfircR-o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"API one\",\n\t\"description\": \"api for domain.com\",\n\t\"type\": \"public\",\n\t\"rate_limit\": 1000,\n\t\"is_active\": \"yes\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BACKEND_API_URL}}/user/api/update/65a3067eecd40e8c927b7e2f/65c8b214a08d7fe303964f4e",
+					"host": [
+						"{{BACKEND_API_URL}}"
+					],
+					"path": [
+						"user",
+						"api",
+						"update",
+						"65a3067eecd40e8c927b7e2f",
+						"65c8b214a08d7fe303964f4e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Api By App",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoX3V1aWQiOiI4YzJiYTI5Ny1mYWQ2LTQzYmEtODQ5Zi1jMjJlM2RjNWU5ZTYiLCJpYXQiOjE3MDUxODIwNzF9.iR-IQEvqTQYW6PC9nsA75k6DjuLe37gm5VTmfircR-o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"API one\",\n\t\"description\": \"api for domain.com\",\n\t\"type\": \"public\",\n\t\"rate_limit\": 1000,\n\t\"is_active\": \"yes\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BACKEND_API_URL}}/user/api/by_app/65a3067eecd40e8c927b7e2f",
+					"host": [
+						"{{BACKEND_API_URL}}"
+					],
+					"path": [
+						"user",
+						"api",
+						"by_app",
+						"65a3067eecd40e8c927b7e2f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Api Single",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoX3V1aWQiOiI4YzJiYTI5Ny1mYWQ2LTQzYmEtODQ5Zi1jMjJlM2RjNWU5ZTYiLCJpYXQiOjE3MDUxODIwNzF9.iR-IQEvqTQYW6PC9nsA75k6DjuLe37gm5VTmfircR-o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"API one\",\n\t\"description\": \"api for domain.com\",\n\t\"type\": \"public\",\n\t\"rate_limit\": 1000,\n\t\"is_active\": \"yes\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BACKEND_API_URL}}/user/api/single/65a3067eecd40e8c927b7e2f/65c8b214a08d7fe303964f4e",
+					"host": [
+						"{{BACKEND_API_URL}}"
+					],
+					"path": [
+						"user",
+						"api",
+						"single",
+						"65a3067eecd40e8c927b7e2f",
+						"65c8b214a08d7fe303964f4e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Api Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoX3V1aWQiOiI4YzJiYTI5Ny1mYWQ2LTQzYmEtODQ5Zi1jMjJlM2RjNWU5ZTYiLCJpYXQiOjE3MDUxODIwNzF9.iR-IQEvqTQYW6PC9nsA75k6DjuLe37gm5VTmfircR-o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BACKEND_API_URL}}/user/api/delete/65c8b214a08d7fe303964f4e",
+					"host": [
+						"{{BACKEND_API_URL}}"
+					],
+					"path": [
+						"user",
+						"api",
+						"delete",
+						"65c8b214a08d7fe303964f4e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Dashboard Api 24",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoX3V1aWQiOiI4YzJiYTI5Ny1mYWQ2LTQzYmEtODQ5Zi1jMjJlM2RjNWU5ZTYiLCJpYXQiOjE3MDUxODIwNzF9.iR-IQEvqTQYW6PC9nsA75k6DjuLe37gm5VTmfircR-o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BACKEND_API_URL}}/user/requests/last-24-hours",
+					"host": [
+						"{{BACKEND_API_URL}}"
+					],
+					"path": [
+						"user",
+						"requests",
+						"last-24-hours"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Dashboard Api 7",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoX3V1aWQiOiI4YzJiYTI5Ny1mYWQ2LTQzYmEtODQ5Zi1jMjJlM2RjNWU5ZTYiLCJpYXQiOjE3MDUxODIwNzF9.iR-IQEvqTQYW6PC9nsA75k6DjuLe37gm5VTmfircR-o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BACKEND_API_URL}}/user/requests/last-7-days",
+					"host": [
+						"{{BACKEND_API_URL}}"
+					],
+					"path": [
+						"user",
+						"requests",
+						"last-7-days"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Dashboard Api 30",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoX3V1aWQiOiI4YzJiYTI5Ny1mYWQ2LTQzYmEtODQ5Zi1jMjJlM2RjNWU5ZTYiLCJpYXQiOjE3MDUxODIwNzF9.iR-IQEvqTQYW6PC9nsA75k6DjuLe37gm5VTmfircR-o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BACKEND_API_URL}}/user/requests/last-30-days",
+					"host": [
+						"{{BACKEND_API_URL}}"
+					],
+					"path": [
+						"user",
+						"requests",
+						"last-30-days"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Dashboard Api 12",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoX3V1aWQiOiI4YzJiYTI5Ny1mYWQ2LTQzYmEtODQ5Zi1jMjJlM2RjNWU5ZTYiLCJpYXQiOjE3MDUxODIwNzF9.iR-IQEvqTQYW6PC9nsA75k6DjuLe37gm5VTmfircR-o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BACKEND_API_URL}}/user/requests/last-12-months",
+					"host": [
+						"{{BACKEND_API_URL}}"
+					],
+					"path": [
+						"user",
+						"requests",
+						"last-12-months"
 					]
 				}
 			},

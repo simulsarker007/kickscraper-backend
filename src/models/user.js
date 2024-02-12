@@ -3,18 +3,23 @@ const { mongoose } = require('../utils/monogoUtils');
 
 
 
-const UserSchema = new mongoose.Schema({
-    _uuid: { type: String, unique: true },
-    firstName: String,
-    lastName: String,
-    email: { type: String, unique: true, required: true },
-    avatar: String,
-    emailConfirmedAt: String,
-    password: String,
-    job_level: { type: String, required: false },
-    job_function: { type: String, required: false },
-    timezone: { type: String, required: false },
-});
+const UserSchema = new mongoose.Schema(
+    {
+        _uuid: { type: String, unique: true },
+        firstName: String,
+        lastName: String,
+        email: { type: String, unique: true, required: true },
+        avatar: String,
+        emailConfirmedAt: String,
+        password: String,
+        job_level: { type: String, required: false },
+        job_function: { type: String, required: false },
+        timezone: { type: String, required: false },
+    },
+    {
+        timestamps: true
+    }
+);
 
 // Generate a unique token before saving the user (only when creating a new user)
 UserSchema.pre('save', function (next) {

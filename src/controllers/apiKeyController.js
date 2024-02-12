@@ -5,6 +5,9 @@ const ApiKey = require("../models/api_key");
 
 const createApi = async (req, res) => {
     try {
+
+
+
         // Define a schema for validation
         const schema = Joi.object({
             name: Joi.string().required(),
@@ -77,7 +80,7 @@ const getApiByApp = async (req, res) => {
             return res.status(404).json({ message: 'Application Not Found', data: false });
         }
 
-        const apiKey = ApiKey.find({ app_id: application?._id }).get();
+        const apiKey = await ApiKey.find({ app_id: application?._id });
 
 
         // Return the user ID
@@ -184,4 +187,30 @@ const updateApiKey = async (req, res) => {
     }
 };
 
-module.exports = { createApi, getApiByApp, getApiKey, updateApiKey }
+const deleteApiKey = async (req, res) => {
+    try {
+
+        const { auth_uuid } = req;
+
+        const _id = req?.params?.apiKeyId;
+
+        const user = await User.findOne({ _uuid: auth_uuid });
+
+
+        const apiKey = await ApiKey.findOneAndDelete({ user_id: user?._id, _id })
+
+
+        if (!apiKey) {
+            return res.status(404).json({ message: 'Api Key Not Found!', data: false });
+        }
+
+        // Return the user ID
+        res.json({ message: "Api Key deleted Successfully", apiKey });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server Side Error', data: false });
+    }
+};
+
+
+module.exports = { createApi, getApiByApp, getApiKey, updateApiKey, deleteApiKey }

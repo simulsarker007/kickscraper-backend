@@ -1,18 +1,23 @@
 const { mongoose } = require('../utils/monogoUtils');
 
 
-const VisitSchema = new mongoose.Schema({
-    user_id: { type: String, required: true },
-    app_id: { type: String, required: true },
-    visitorId: { type: String, required: true },
-    requestId: String,
-    browserDetails: { type: Object, required: false },
-    incognito: String,
-    ip: String,
-    ipLocation: { type: Object, required: false },
-    url: { type: String, required: false },
-    visitorFound: { type: String, required: false },
-});
+const VisitSchema = new mongoose.Schema(
+    {
+        user_id: { type: String, required: true },
+        app_id: { type: String, required: true },
+        visitorId: { type: String, required: true },
+        requestId: String,
+        browserDetails: { type: Object, required: false },
+        incognito: String,
+        ip: String,
+        ipLocation: { type: Object, required: false },
+        url: { type: String, required: false },
+        visitorFound: { type: String, required: false },
+    },
+    {
+        timestamps: true
+    }
+);
 
 
 // Generate a unique token before saving the user (only when creating a new user)
