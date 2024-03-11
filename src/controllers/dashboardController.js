@@ -5,6 +5,7 @@ const User = require('../models/user');
 exports.getRequestsLast24Hours = async (req, res) => {
 
     const { auth_uuid } = req;
+    const { appId } = req?.params;
 
     //user
     const user = await User.findOne({ _uuid: auth_uuid });
@@ -15,7 +16,7 @@ exports.getRequestsLast24Hours = async (req, res) => {
 
     try {
         const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
-        const requests = await Request.find({ user_id: user?._id, createdAt: { $gte: twentyFourHoursAgo } });
+        const requests = await Request.find({ user_id: user?._id, createdAt: { $gte: twentyFourHoursAgo }, application: appId });
 
         res.json({ message: "ok", requests });
     } catch (error) {
@@ -28,6 +29,7 @@ exports.getRequestsLast7Days = async (req, res) => {
 
 
     const { auth_uuid } = req;
+    const { appId } = req?.params;
 
     //user
     const user = await User.findOne({ _uuid: auth_uuid });
@@ -38,7 +40,7 @@ exports.getRequestsLast7Days = async (req, res) => {
 
     try {
         const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
-        const requests = await Request.find({ user_id: user?._id, createdAt: { $gte: sevenDaysAgo } });
+        const requests = await Request.find({ user_id: user?._id, createdAt: { $gte: sevenDaysAgo }, application: appId });
         res.json({ message: "ok", requests });
     } catch (error) {
         res.status(500).json({ message: error.message, data: false });
@@ -51,6 +53,8 @@ exports.getRequestsLast30Days = async (req, res) => {
 
     const { auth_uuid } = req;
 
+    const { appId } = req?.params;
+
     //user
     const user = await User.findOne({ _uuid: auth_uuid });
 
@@ -60,7 +64,7 @@ exports.getRequestsLast30Days = async (req, res) => {
 
     try {
         const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
-        const requests = await Request.find({ user_id: user?._id, createdAt: { $gte: thirtyDaysAgo } });
+        const requests = await Request.find({ user_id: user?._id, createdAt: { $gte: thirtyDaysAgo }, application: appId });
         res.json({ message: "ok", requests });
     } catch (error) {
         res.status(500).json({ message: error.message, data: false });
@@ -73,6 +77,9 @@ exports.getRequestsLast12Months = async (req, res) => {
 
     const { auth_uuid } = req;
 
+    const { appId } = req?.params;
+
+
     //user
     const user = await User.findOne({ _uuid: auth_uuid });
 
@@ -82,7 +89,7 @@ exports.getRequestsLast12Months = async (req, res) => {
 
     try {
         const twelveMonthsAgo = new Date(Date.now() - 365 * 24 * 60 * 60 * 1000);
-        const requests = await Request.find({ user_id: user?._id, createdAt: { $gte: twelveMonthsAgo } });
+        const requests = await Request.find({ user_id: user?._id, createdAt: { $gte: twelveMonthsAgo }, application: appId });
         res.json({ message: "ok", requests });
     } catch (error) {
         res.status(500).json({ message: error.message, data: false });

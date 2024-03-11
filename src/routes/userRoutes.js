@@ -19,10 +19,10 @@ router.post('/update', uploaderFn('avatars', ['image/jpeg', 'image/png', 'image/
 
 
 //dashboard api
-router.get('/requests/last-24-hours', dashboardController.getRequestsLast24Hours);
-router.get('/requests/last-7-days', dashboardController.getRequestsLast7Days);
-router.get('/requests/last-30-days', dashboardController.getRequestsLast30Days);
-router.get('/requests/last-12-months', dashboardController.getRequestsLast12Months);
+router.get('/requests/last-24-hours/:appId', dashboardController.getRequestsLast24Hours);
+router.get('/requests/last-7-days/:appId', dashboardController.getRequestsLast7Days);
+router.get('/requests/last-30-days/:appId', dashboardController.getRequestsLast30Days);
+router.get('/requests/last-12-months/:appId', dashboardController.getRequestsLast12Months);
 
 
 //application api

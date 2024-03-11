@@ -73,6 +73,43 @@ const login = async (req, res) => {
 };
 
 
+
+const googleAuth = async (req, res) => {
+    try {
+        const { id_token } = req.body;
+
+        // Make a request to Google's tokeninfo endpoint to verify the token
+        const response = await fetch(`https://oauth2.googleapis.com/tokeninfo?id_token=${id_token}`);
+
+        const google = await response?.json();
+
+        const { email, given_name, family_name } = google?.data;
+
+        // Check if the user exists in your database
+        let user = await User.findOne({ email });
+
+        if (!user) {
+            // If user doesn't exist, create a new user
+            user = new User({
+                firstName: given_name,
+                lastName: family_name,
+                email: email,
+                // You may generate a random password here if required
+            });
+            await user.save();
+        }
+
+        // Now user is either registered or already existed, proceed with login
+        const token = jwt.sign({ auth_uuid: user._uuid }, process.env.JWT_SECRET);
+
+        res.json({ message: "Successfully Loggedin", token });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Internal Server Error', data: false });
+    }
+};
+
+
 const sendRegistrationEmail = async (email, firstName, lastName) => {
     try {
         const filePath = path.resolve(__filename, '../../template/email/reg_welcome.html');
@@ -100,4 +137,4 @@ const sendRegistrationEmail = async (email, firstName, lastName) => {
 };
 
 
-module.exports = { register, login };
+module.exports = { register, login, googleAuth };

@@ -592,6 +592,44 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Google Login POST",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id_token\": \"asfasfasfgsaga\" // random generated token from google auth\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BACKEND_API_URL}}/auth/login/google",
+					"host": [
+						"{{BACKEND_API_URL}}"
+					],
+					"path": [
+						"auth",
+						"login",
+						"google"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
