@@ -141,6 +141,9 @@ const sendRegistrationEmail = async (email, firstName, lastName) => {
 const joinWishlist = async (req, res) => {
     try {
         const { name, email } = req.body;
+        if(!email) return res.status(400).json({
+            message: 'Email is required.'
+        });
 
         const existingUser = await Wishlist.findOne({ email });
 
@@ -167,6 +170,11 @@ const joinWishlist = async (req, res) => {
 const joinNewsletter = async (req, res) => {
     try {
         const { email } = req.body;
+
+        if(!email) return res.status(400).json({
+            message: 'Email is required.'
+        });
+
         const existingUser = await Newsletter.findOne({ email });
 
         if (existingUser) {
