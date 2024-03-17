@@ -1,6 +1,8 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
+const Wishlist = require('../models/wishlist');
+const Newsletter = require('../models/newsletter');
 const fs = require('fs').promises;
 const path = require('path');
 const nodemailerTransporter = require('../utils/nodemailer');
@@ -136,5 +138,55 @@ const sendRegistrationEmail = async (email, firstName, lastName) => {
     }
 };
 
+const joinWishlist = async (req, res) => {
+    try {
+        const { name, email } = req.body;
 
-module.exports = { register, login, googleAuth };
+        const existingUser = await Wishlist.findOne({ email });
+
+        if (existingUser) {
+            return res.status(400).json({
+                message: 'Email is already in wishlist.'
+            });
+        }
+
+        const user = new Wishlist({
+            name,
+            email
+        });
+
+        await user.save();
+
+        res.status(201).json({ message: 'Email successfully added to wishlist.' })
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Internal Server Error', data: false });
+    }
+};
+const joinNewsletter = async (req, res) => {
+    try {
+        const { email } = req.body;
+        const existingUser = await Newsletter.findOne({ email });
+
+        if (existingUser) {
+            return res.status(400).json({
+                message: 'Email is already in newsletter.'
+            });
+        }
+
+        const user = new Newsletter({
+            email
+        });
+
+        await user.save();
+
+        res.status(201).json({ message: 'Email successfully added to newsletter.' })
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Internal Server Error', data: false });
+    }
+};
+
+
+module.exports = { register, login, googleAuth, joinWishlist, joinNewsletter };
