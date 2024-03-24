@@ -1,5 +1,6 @@
 const { isJsonParseable } = require("../helpers/checkJsonParse");
 const ApiKey = require("../models/api_key");
+const Application = require("../models/application");
 const Request = require("../models/request");
 
 const axios = require('axios');
@@ -40,6 +41,16 @@ const monitor = async (req, res) => {
         }
 
 
+        const application = Application.findOne({ _id: api_Key?.app_id });
+
+        if (data?.currentPage?.includes(domain)) {
+            application.verified = true;
+        }
+
+
+        application.save();
+
+
         const data = JSON.parse(decodedData);
 
 
@@ -66,6 +77,7 @@ const monitor = async (req, res) => {
             incognito_mode: data?.incognito_mode,
             bot: data?.detectionResult?.bot,
             kicked_bot: data?.kicked_bot,
+            botKind: data?.botKind,
             collectionTime: data?.collectionTime,
             android: data?.collectedData?.android?.value,
             browserKind: data?.debugData?.browserKind,
@@ -78,6 +90,7 @@ const monitor = async (req, res) => {
             city: location?.city,
             platform: data?.platform,
             device: data?.deviceType,
+            captcha_status: data?.captcha_status,
             request: decodedData,
         });
 

@@ -11,6 +11,7 @@ const RequestSchema = new mongoose.Schema(
         incognito_mode: String,
         bot: { type: String, required: false },
         kicked_bot: { type: String, required: false },
+        botKind: { type: String, required: false, default: false },
         collectionTime: { type: String, required: false },
         android: { type: String, required: false },
         browserKind: { type: String, required: false },
@@ -23,6 +24,7 @@ const RequestSchema = new mongoose.Schema(
         city: { type: String, required: false },
         platform: { type: String, required: false },
         device: { type: String, required: false },
+        captcha_status: { type: String, required: true, default: 'not_showed' },
         request: String
     },
     {

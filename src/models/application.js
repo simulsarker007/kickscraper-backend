@@ -10,6 +10,7 @@ const ApplicationSchema = new mongoose.Schema(
         domain_icon: String,
         subscription: { type: String, required: true },
         status: { type: String, required: true, default: 'active' },
+        verified: { type: Boolean, required: true, default: false },
         endAt: { type: Date, required: false },
         cancelAt: { type: Date, required: false },
     },
