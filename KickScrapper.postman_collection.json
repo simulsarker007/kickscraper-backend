@@ -149,13 +149,13 @@
 				"header": [
 					{
 						"key": "x-auth-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoX3V1aWQiOiI4YzJiYTI5Ny1mYWQ2LTQzYmEtODQ5Zi1jMjJlM2RjNWU5ZTYiLCJpYXQiOjE3MDUxODIwNzF9.iR-IQEvqTQYW6PC9nsA75k6DjuLe37gm5VTmfircR-o",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoX3V1aWQiOiIxYzAyNTgxOC00NjFjLTQ4ZjktYjQ0MC1mYzFjZDQ3NmZiYTAiLCJpYXQiOjE3MTEzOTIxNzZ9.iuJYkEFGnkvIuHsx8B9a0Kf_krQGsxRqeabFB0YOnGs",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\" : \"New Web\",\n    \"domain\" : \"facebook.com\"\n}",
+					"raw": "{\n    \"name\" : \"New Web\",\n    \"domain\" : \"shakilahamed22.com\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -218,7 +218,7 @@
 				"header": [
 					{
 						"key": "x-auth-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoX3V1aWQiOiI4YzJiYTI5Ny1mYWQ2LTQzYmEtODQ5Zi1jMjJlM2RjNWU5ZTYiLCJpYXQiOjE3MDUxODIwNzF9.iR-IQEvqTQYW6PC9nsA75k6DjuLe37gm5VTmfircR-o",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoX3V1aWQiOiIxYzAyNTgxOC00NjFjLTQ4ZjktYjQ0MC1mYzFjZDQ3NmZiYTAiLCJpYXQiOjE3MTEzOTIxNzZ9.iuJYkEFGnkvIuHsx8B9a0Kf_krQGsxRqeabFB0YOnGs",
 						"type": "text"
 					}
 				],
@@ -626,6 +626,32 @@
 						"auth",
 						"login",
 						"google"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "App Delete",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoX3V1aWQiOiIxYzAyNTgxOC00NjFjLTQ4ZjktYjQ0MC1mYzFjZDQ3NmZiYTAiLCJpYXQiOjE3MTEzOTIxNzZ9.iuJYkEFGnkvIuHsx8B9a0Kf_krQGsxRqeabFB0YOnGs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BACKEND_API_URL}}/user/app/delete/6601c5ce85831b19d4784735",
+					"host": [
+						"{{BACKEND_API_URL}}"
+					],
+					"path": [
+						"user",
+						"app",
+						"delete",
+						"6601c5ce85831b19d4784735"
 					]
 				}
 			},

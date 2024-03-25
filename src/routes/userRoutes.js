@@ -27,6 +27,7 @@ router.get('/requests/last-12-months/:appId', dashboardController.getRequestsLas
 
 //application api
 router.post('/app/create', applicationController.createApp);
+router.post('/app/delete/:appId', applicationController.deleteApp);
 router.post('/app/update/:appId', applicationController.updateApp)
 router.get('/app/by_user', applicationController.getAppByUser)
 router.get('/app/single/:appId', applicationController.getCurrentApp)

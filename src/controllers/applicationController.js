@@ -46,6 +46,32 @@ const createApp = async (req, res) => {
     }
 };
 
+const deleteApp = async (req, res) => {
+
+    try {
+
+        const { auth_uuid } = req;
+
+
+        const _id = req?.params?.appId;
+
+        const user = await User.findOne({ _uuid: auth_uuid });
+
+        // Check if Application is for this user
+        const isValidApplication = await Application.findOne({ _id, user_id: user?._id });
+
+        if (!isValidApplication) {
+            return res.status(400).json({ message: 'This application is not for this user!' });
+        }
+
+        await Application.deleteOne({ _id });
+        return res.json({ message: "Application Deleted!", id: _id });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server Side Error', data: false });
+    }
+}
 const updateApp = async (req, res) => {
     try {
 
@@ -149,4 +175,4 @@ const getCurrentApp = async (req, res) => {
 
 
 
-module.exports = { getAppByUser, getCurrentApp, createApp, updateApp }
+module.exports = { getAppByUser, getCurrentApp, createApp, updateApp, deleteApp }
